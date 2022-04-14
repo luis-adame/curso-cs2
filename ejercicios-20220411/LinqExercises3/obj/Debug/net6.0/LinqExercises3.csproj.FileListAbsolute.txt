@@ -1,0 +1,15 @@
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\bin\Debug\net6.0\LinqExercises3.exe
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\bin\Debug\net6.0\LinqExercises3.deps.json
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\bin\Debug\net6.0\LinqExercises3.runtimeconfig.json
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\bin\Debug\net6.0\LinqExercises3.dll
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\bin\Debug\net6.0\LinqExercises3.pdb
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\obj\Debug\net6.0\LinqExercises3.csproj.AssemblyReference.cache
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\obj\Debug\net6.0\LinqExercises3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\obj\Debug\net6.0\LinqExercises3.AssemblyInfoInputs.cache
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\obj\Debug\net6.0\LinqExercises3.AssemblyInfo.cs
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\obj\Debug\net6.0\LinqExercises3.csproj.CoreCompileInputs.cache
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\obj\Debug\net6.0\LinqExercises3.dll
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\obj\Debug\net6.0\refint\LinqExercises3.dll
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\obj\Debug\net6.0\LinqExercises3.pdb
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\obj\Debug\net6.0\LinqExercises3.genruntimeconfig.cache
+C:\Users\Luis\source\repos\ejercicios-20220411\LinqExercises3\obj\Debug\net6.0\ref\LinqExercises3.dll

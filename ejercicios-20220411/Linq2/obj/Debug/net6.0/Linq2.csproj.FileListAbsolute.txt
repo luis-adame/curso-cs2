@@ -1,0 +1,15 @@
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\bin\Debug\net6.0\Linq2.exe
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\bin\Debug\net6.0\Linq2.deps.json
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\bin\Debug\net6.0\Linq2.runtimeconfig.json
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\bin\Debug\net6.0\Linq2.dll
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\bin\Debug\net6.0\Linq2.pdb
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\obj\Debug\net6.0\Linq2.csproj.AssemblyReference.cache
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\obj\Debug\net6.0\Linq2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\obj\Debug\net6.0\Linq2.AssemblyInfoInputs.cache
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\obj\Debug\net6.0\Linq2.AssemblyInfo.cs
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\obj\Debug\net6.0\Linq2.csproj.CoreCompileInputs.cache
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\obj\Debug\net6.0\Linq2.dll
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\obj\Debug\net6.0\refint\Linq2.dll
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\obj\Debug\net6.0\Linq2.pdb
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\obj\Debug\net6.0\Linq2.genruntimeconfig.cache
+C:\Users\Luis\source\repos\ejercicios-20220411\Linq2\obj\Debug\net6.0\ref\Linq2.dll
