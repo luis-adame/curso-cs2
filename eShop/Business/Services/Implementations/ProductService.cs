@@ -10,12 +10,7 @@ namespace Business.Services.Implementations
 {
     public class ProductService : IProductService
     {
-        private List<Product> ProductList = TestData.ProductList;
-
-        public ProductService()
-        {
-            TestData.InitProductList();
-        }
+        private List<Product> ProductList = TestData.GetProductData();
 
         public List<Product> GetProducts()
         {
@@ -32,12 +27,12 @@ namespace Business.Services.Implementations
             ProductList.Add(product);
         }
 
-        public void UpdateProduct(Product product)
+        public void UpdateProduct(int id, string name, decimal price, string description)
         {
-            var entity = ProductList.FirstOrDefault(c => c.Id == product.Id);
+            var product = ProductList.FirstOrDefault(c => c.Id == id);
 
-            if (entity != null)
-                entity.Update(product.Name, product.Description, product.Price);
+            if (product != null)
+                product.Update(name, description, price);
             else
                 throw new ApplicationException("El producto no fue encontrado");
         }

@@ -79,12 +79,9 @@ namespace eShop
                 if (!int.TryParse(idCaptura, out int idDepartamento))
                     throw new ApplicationException("No se encontró Departamento");
 
-                //var listaProductos = _productService.GetProductsByDepartment();
+                var listaProductos = _productService.GetProductsByDepartment(idDepartamento);
 
-                //foreach (var producto in listaProductos)
-                //{
-                //    Console.WriteLine(producto);
-                //}
+                SeleccionaProducto(listaProductos);
             }
             catch (Exception ex)
             {

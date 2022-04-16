@@ -35,8 +35,10 @@ namespace Business.Services.Implementations
                 po.ChangeOrderStatus(status);
                 return po;
             }
-
-            throw new ApplicationException("No se encontro la orden solicitada");
+            else
+            {
+                throw new ApplicationException("No se encontro la orden solicitada");
+            }
         }
 
     }

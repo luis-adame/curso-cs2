@@ -1,4 +1,5 @@
-﻿using Business.Services.Implementations;
+﻿using Business.Services;
+using Business.Services.Implementations;
 using Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace eShop
         private readonly DepartmentService _departmentService;
 		private readonly ReportService _reportService;
 		private readonly PurchaseOrderService _purchaseOrderService;
+		private readonly ProviderService _providerService;
 
         public eShopConsole()
         {
@@ -21,6 +23,7 @@ namespace eShop
             _departmentService = new DepartmentService();
 			_reportService = new ReportService();
 			_purchaseOrderService = new PurchaseOrderService();
+			_providerService = new ProviderService();
 		}
 
 		public Boolean MainMenu()

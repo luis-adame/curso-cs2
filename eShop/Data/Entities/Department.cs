@@ -8,7 +8,7 @@ namespace Data.Entities
 {
     public class Department
     {
-        public int Id { get; set; }
+        public int Id { get; private set; }
         public string Name { get; private set; }
         public List<Subdepartment> Subdepartments { get; set; }
         private static int idSeed = 1;

@@ -11,6 +11,8 @@ namespace Business.Services.Abstractions
     {
         public List<Department> GetDepartments();
         public Department GetDepartment(int id);
-        public List<Subdepartment> GetSubdepartments(string departmentName);
+        public Subdepartment GetSubdepartment(int id);
+        public List<Subdepartment> GetSubdepartments();
+        public List<Subdepartment> GetSubdepartments(int id);
     }
 }

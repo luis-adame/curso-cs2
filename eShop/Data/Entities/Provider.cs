@@ -14,8 +14,9 @@ namespace Data.Entities
         public string PhoneNumber { get; set; }
         public string EmailAddress { get; private set; }
         public string City { get; set; }
+		private static int idSeed = 0;
 
-		public Provider(int id, string name, string emailAddress)
+		public Provider(string name, string emailAddress)
 		{
 			if (string.IsNullOrEmpty(name))
 				throw new ArgumentNullException("El nombre no puede ser vacio");
@@ -34,13 +35,17 @@ namespace Data.Entities
 			}
 
 			Name = name;
-			Id = id;
+			Id = idSeed++;
 		}
 
 		public void AddAddress(string street, string city)
         {
+			if (string.IsNullOrEmpty(street))
+				throw new ArgumentNullException("La direccion no puede estar vacia");
 
-        }
+			if (string.IsNullOrEmpty(city))
+				throw new ArgumentNullException("La ciudad no puede estar vacia");
+		}
 
 		public void AddPhoneNumber(string phoneNumber)
 		{

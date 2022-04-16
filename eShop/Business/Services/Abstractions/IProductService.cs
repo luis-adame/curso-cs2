@@ -12,7 +12,7 @@ namespace Business.Services.Abstractions
         public List<Product> GetProducts();
         public Product GetProduct(int id);
         public void AddProduct(Product product);
-        public void UpdateProduct(Product product);
+        public void UpdateProduct(int id, string name, decimal price, string description);
         public void DeleteProduct(int id);
         public List<Product> GetProductsByDepartment(int id);
         public List<Product> GetProductsBySubdepartment(int id);

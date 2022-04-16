@@ -16,7 +16,7 @@ namespace Business.Services.Implementations
 {
     public class ReportService
     {
-		private List<Product> ProductList = TestData.ProductList;
+		private List<Product> ProductList = TestData.GetProductData();
 
 		public List<ProductReportDto> Top5Expensives()
 		{

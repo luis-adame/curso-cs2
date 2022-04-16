@@ -10,7 +10,7 @@ namespace Business.Services.Implementations
 {
     public class DepartmentService : IDepartmentService
     {
-		private List<Department> DepartmentList = TestData.DepartmentList;
+		private List<Department> DepartmentList = TestData.GetDepartmentData();
 
 		public List<Department> GetDepartments()
         {
@@ -22,19 +22,24 @@ namespace Business.Services.Implementations
 			return DepartmentList.FirstOrDefault(x => x.Id == id);
 		}
 
-		public List<Subdepartment> GetSubdepartments(string departmentName)
+		public Subdepartment GetSubdepartment(int id)
+        {
+			return DepartmentList.SelectMany(x => x.Subdepartments).Where(x => x.Id == id).FirstOrDefault();
+        }
+
+		public List<Subdepartment> GetSubdepartments()
 		{
-			var department = DepartmentList.FirstOrDefault(c => c.Name == departmentName);
+			return DepartmentList.SelectMany(x => x.Subdepartments).ToList();
+		}
+
+		public List<Subdepartment> GetSubdepartments(int id)
+		{
+			var department = DepartmentList.FirstOrDefault(c => c.Id == id);
 
 			if (department != null)
 				return department.Subdepartments;
 
 			return new List<Subdepartment>();
-		}
-
-		public List<Subdepartment> GetSubdepartments()
-        {
-			return DepartmentList.SelectMany(x => x.Subdepartments).ToList();
 		}
 	}
 }

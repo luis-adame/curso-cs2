@@ -17,9 +17,20 @@ namespace Data.Entities
         public string Brand { get; private set; }
         public string Department { get; private set; }
         public Subdepartment Subdepartment { get; private set; }
+        private static int idSeed = 0;
 
+        public Product(int id, string name, int stock, decimal price, string sku, string description, string brand)
+        {
+            Id = id;
+            Name = name;
+            Stock = stock;
+            Price = price;
+            Sku = sku;
+            Description = description;
+            Brand = brand;
+        }
 
-        public Product(int id, string name, decimal price, string description, string brand, string sku, int stock = 1)
+        public Product(string name, decimal price, string description, string brand, string sku, int stock = 0)
         {
             if (price < 0)
                 throw new InvalidOperationException("El precio no puede ser menor a cero");
@@ -39,7 +50,7 @@ namespace Data.Entities
             if (string.IsNullOrEmpty(sku))
                 throw new ArgumentNullException("El sku no puede estar vacio");
 
-            Id = id;
+            Id = idSeed++;
             Name = name;
             Price = price;
             Description = description;

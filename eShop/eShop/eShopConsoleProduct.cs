@@ -15,13 +15,12 @@ namespace eShop
 			Console.WriteLine("Elige una opcion:");
 			Console.WriteLine("1. Agregar Producto");
 			Console.WriteLine("2. Editar Producto");
-			Console.WriteLine("3. Consultar Productos");
+			Console.WriteLine("3. Eliminar Producto");
 			Console.WriteLine("4. Consultar Producto");
-			Console.WriteLine("5. Eliminar Producto");
-			Console.WriteLine("6. Consultar Subdepartamento");
-			Console.WriteLine("7. Consultar Reportes");
-			Console.WriteLine("8. Compras");
-			Console.WriteLine("9. Salir");
+			Console.WriteLine("5. Consultar Productos");
+			Console.WriteLine("6. Reportes");
+			Console.WriteLine("7. Ordenes");
+			Console.WriteLine("8. Salir");
 
 			switch (Console.ReadLine())
 			{
@@ -32,24 +31,21 @@ namespace eShop
 					EditarProducto();
 					break;
 				case "3":
-					ConsultarProductos();
+					EliminarProducto();
 					break;
 				case "4":
 					ConsultarProducto();
 					break;
 				case "5":
-					EliminarProducto();
+					ConsultarProductos();
 					break;
 				case "6":
-					//MenuConsultaDepartamentos();
-					break;
-				case "7":
 					//MenuDeReportes();
 					break;
-				case "8":
-					//MenuDeCompraProductos();
+				case "7":
+					while(MenuOrdenes());
 					break;
-				case "9":
+				case "8":
 					return false;
 				default:
 					break;
@@ -62,10 +58,39 @@ namespace eShop
 		{
 			Console.Clear();
 			Console.WriteLine("REGISTRAR PRODUCTO");
-			Console.WriteLine("Capture los datos del nuevo producto");
+			Console.WriteLine("Seleccione Departamento");
 
-			Console.WriteLine("Id: ");
-			var idInput = Console.ReadLine();
+			foreach (var departamento in _departmentService.GetDepartments())
+			{
+				Console.WriteLine($"{departamento.Id}\t{departamento.Name}");
+			}
+
+			var idDepartamentoCaptura = Console.ReadLine();
+
+			if (!int.TryParse(idDepartamentoCaptura, out int idDepartamento))
+				return;
+			else if (_departmentService.GetDepartment(idDepartamento) == null)
+				return;
+
+			Console.Clear();
+			Console.WriteLine("REGISTRAR PRODUCTO");
+			Console.WriteLine("Seleccione Subdepartamento");
+
+            foreach (var subdepartamento in _departmentService.GetSubdepartments(idDepartamento))
+            {
+				Console.WriteLine($"{subdepartamento.Id}\t{subdepartamento.Name}");
+			}
+
+			var idSubdepartamentoCaptura = Console.ReadLine();
+
+			if (!int.TryParse(idSubdepartamentoCaptura, out int idSubdepartamento))
+				return;
+			else if (_departmentService.GetSubdepartment(idSubdepartamento) == null)
+				return;
+
+			Console.Clear();
+			Console.WriteLine("REGISTRAR PRODUCTO");
+			Console.WriteLine("Capture los datos del nuevo producto");
 
 			Console.WriteLine("Nombre: ");
 			var nameInput = Console.ReadLine();
@@ -84,14 +109,15 @@ namespace eShop
 
 			try
 			{
-				if (!int.TryParse(idInput, out int idAux))
-					throw new ApplicationException("El Id no es válido");
-
 				if (!decimal.TryParse(priceInput, out decimal priceAux))
 					throw new ApplicationException("El precio no es válido");
 
-				var product = new Product(idAux, nameInput, priceAux, descriptionInput, brandInput, skuInput);
+				var product = new Product(nameInput, priceAux, descriptionInput, brandInput, skuInput);
+				product.AddSubdepartment(_departmentService.GetSubdepartment(idSubdepartamento));
+
+				_departmentService.GetSubdepartment(idSubdepartamento).AddProduct(product);
 				_productService.AddProduct(product);
+
 				Console.WriteLine("Producto agregado correctamente.");
 
 				Console.ReadKey();
@@ -132,8 +158,7 @@ namespace eShop
 					throw new ApplicationException("El precio no es válido");
 				}
 
-				var product = new Product(idAux, nameInput, priceAux, descriptionInput, "", "");
-				_productService.UpdateProduct(product);
+				_productService.UpdateProduct(idAux, nameInput, priceAux, descriptionInput);
 				Console.WriteLine("Producto editado correctamente.");
 
 				Console.ReadKey();
@@ -173,21 +198,6 @@ namespace eShop
 			
 		}
 
-		private void ConsultarProductos()
-		{
-			Console.Clear();
-			Console.WriteLine("LISTA DE PRODUCTOS");
-
-			List<Product> listaProductos = _productService.GetProducts();
-
-			foreach (var a in listaProductos)
-			{
-				Console.Write(a);
-			}
-
-			Console.ReadKey();
-		}
-
 		private void EliminarProducto()
 		{
 			Console.Clear();
@@ -210,6 +220,21 @@ namespace eShop
             {
 				Console.WriteLine(e.Message);
             }
+		}
+
+		private void ConsultarProductos()
+		{
+			Console.Clear();
+			Console.WriteLine("LISTA DE PRODUCTOS");
+
+			List<Product> listaProductos = _productService.GetProducts();
+
+			foreach (var a in listaProductos)
+			{
+				Console.Write($"Id:{a.Id}\tNombre:{a.Name}\tPrecio:{a.Price}\tStock:{a.Stock}\n");
+			}
+
+			Console.ReadKey();
 		}
 	}
 }
